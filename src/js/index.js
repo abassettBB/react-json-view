@@ -1,5 +1,6 @@
 import React from 'react';
 import {polyfill} from 'react-lifecycles-compat';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import JsonViewer from './components/JsonViewer';
 import AddKeyRequest from './components/ObjectKeyModal/AddKeyRequest';
 import ValidationFailure from './components/ValidationFailure';
@@ -10,10 +11,10 @@ import ObjectAttributes from './stores/ObjectAttributes';
 import Theme from './themes/getStyle';
 
 //some style behavior requires css
-import './../style/scss/global.scss';
+import s from './../style/scss/global.scss';
 
 //forward src through to JsonObject component
-class ReactJsonView extends React.PureComponent {
+export class ReactJsonView extends React.PureComponent {
 
     constructor(props) {
         super(props);
@@ -277,4 +278,4 @@ class ReactJsonView extends React.PureComponent {
 
 polyfill(ReactJsonView);
 
-export default ReactJsonView;
+export default withStyles(s)(ReactJsonView);
