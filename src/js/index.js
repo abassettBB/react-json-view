@@ -1,6 +1,5 @@
 import React from 'react';
 import {polyfill} from 'react-lifecycles-compat';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import JsonViewer from './components/JsonViewer';
 import AddKeyRequest from './components/ObjectKeyModal/AddKeyRequest';
 import ValidationFailure from './components/ValidationFailure';
@@ -9,9 +8,6 @@ import ObjectAttributes from './stores/ObjectAttributes';
 
 //global theme
 import Theme from './themes/getStyle';
-
-//some style behavior requires css
-import s from './../style/scss/global.scss';
 
 //forward src through to JsonObject component
 export class ReactJsonView extends React.PureComponent {
